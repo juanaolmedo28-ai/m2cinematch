@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineMatch</title>
+    <link rel="stylesheet" href="css/stylesheets.css">
+    <!--Link de tipografia-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- COMIENZO DE HEADER -->
+    <header class="header">
+        <div class="headerContenido">
+            <h1 class="logo">CineMatch</h1>
+            <nav class="menu" aria-label="Principal">
+                <a href="./index.html" class="activo">Inicio</a>
+                <a href="./pages/descubrir.html">Descubrir</a>
+                <a href="./pages/listas.html">Listas</a>
+            </nav>
+
+            <div class="buscador">
+                <label for="busqueda" class="visually-hidden">Buscar películas</label>
+                <input type="search" id="busqueda" placeholder="Buscar películas...">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Presentacion -->
+        <section class="inicio">
+            <div class="inicioTexto">
+                <h2>Películas para cada momento</h2>
+                <p>Descubrí qué ver según tu estado de ánimo, el tiempo que tenés y con quién vas a mirar.</p>
+                <button type="button" class="boton">Encontrar mi película</button>
+            </div>
+
+            <div class="inicioImagen">
+                <!-- Imagen principal: poné tu imagen en img/hero.jpg -->
+                <img src="img/principal.jpg" alt="">
+            </div>
+        </section>
+
+        <!-- Buscador de recomendaciones -->
+        <section class="buscadorDeRecomendaciones">
+            <h2>¿Qué querés ver hoy?</h2>
+
+            <form class="filtros" action="#">
+                <div class="campo">
+                    <label for="animo">Estado de ánimo</label>
+                    <select id="animo" name="animo">
+                        <option value="" selected disabled>Seleccionar</option>
+                        <option value="reir">Quiero reírme</option>
+                        <option value="emocionar">Quiero emocionarme</option>
+                        <option value="intenso">Quiero algo intenso</option>
+                        <option value="llorar">Quiero llorar</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="tiempo">Tiempo disponible</label>
+                    <select id="tiempo" name="tiempo">
+                        <option value="" selected disabled>Seleccionar</option>
+                        <option value="corta">Menos de 90 minutos</option>
+                        <option value="media">Entre 90 y 120 minutos</option>
+                        <option value="larga">Más de 2 horas</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="compania">Compañía</label>
+                    <select id="compania" name="compania">
+                        <option value="" selected disabled>Seleccionar</option>
+                        <option value="solo">Solo</option>
+                        <option value="pareja">En pareja</option>
+                        <option value="amigos">Con amigos</option>
+                        <option value="familia">En familia</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="genero">Género (opcional)</label>
+                    <select id="genero" name="genero">
+                        <option value="" selected disabled>Seleccionar</option>
+                        <option value="accion">Acción</option>
+                        <option value="comedia">Comedia</option>
+                        <option value="drama">Drama</option>
+                        <option value="terror">Terror</option>
+                        <option value="romance">Romance</option>
+                        <option value="ciencia-ficcion">Ciencia ficción</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="boton filtrosBoton">Buscar películas</button>
+            </form>
+        </section>
+
+        <!-- Recomendaciones -->
+        <section class="recomendaciones">
+            <div class="seccionTitulo">
+                <h2>Recomendaciones para vos</h2>
+                <a href="#">Ver más →</a>
+            </div>
+
+            <div class="grillaPeliculas">
+                <article class="pelicula">
+                    <img src="https://stars-my-destination.com/wp-content/uploads/2021/09/dune-756528084-large.jpg" alt="Duna">
+                    <div class="infoPeliculas">
+                        <h3>Duna</h3>
+                        <p>2021 | Ciencia ficción</p>
+                        <p>HBO Max</p>
+                    </div>
+                </article>
+
+                <article class="pelicula">
+                    <img src="https://es.web.img2.acsta.net/pictures/23/07/20/11/29/5479684.jpg" alt="Barbie">
+                    <div class="infoPeliculas">
+                        <h3>Barbie</h3>
+                        <p>2023 | Comedia
+                        </p>
+                        <p>Disney +</p>
+                    </div>
+                </article>
+
+                <article class="pelicula">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNTFlZDI1YWQtMTVjNy00YWU1LTg2YjktMTlhYmRiYzQ3NTVhXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Oppenheimer">
+                    <div class="infoPeliculas">
+                        <h3>Oppenheimer</h3>
+                        <p>2023 | Drama</p>
+                        <p>Prime</p>
+                    </div>
+                </article>
+
+                <article class="pelicula">
+                    <img src="https://m.media-amazon.com/images/M/MV5BOTNlZDY2NzktNDQwMS00ZWE4LWE3MmMtNGUzZTJhMmQ0NGI1XkEyXkFqcGc@._V1_.jpg" alt="Spider-Man: Un nuevo universo">
+                    <div class="infoPeliculas">
+                        <h3>Spider-Man: Un nuevo universo</h3>
+                        <p>2018 | Animación</p>
+                        <p>Disney +</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Generos -->
+        <section class="generos">
+            <h2>Explorá por géneros</h2>
+            <div class="grillaGeneros">
+                <a href="#" class="genero">
+                    <img src="img/accion-mira.svg" alt="">
+                    <h3>Acción</h3>
+                </a>
+
+                <a href="#" class="genero">
+                    <img src="img/comedia.svg" alt="">
+                    <h3>Comedia</h3>
+                </a>
+
+                <a href="#" class="genero">
+                    <img src="img/dramaa.svg" alt="">
+                    <h3>Drama</h3>
+                </a>
+
+                <a href="#" class="genero">
+                    <img src="img/terror.svg" alt="">
+                    <h3>Terror</h3>
+                </a>
+
+                <a href="#" class="genero">
+                    <img src="img/romance.svg" alt="">
+                    <h3>Romance</h3>
+                </a>
+
+                <a href="#" class="genero">
+                    <img src="img/ciencia-ficcion.svg" alt="">
+                    <h3>Ciencia ficción</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footerContenido">
+            <p class="logo">CineMatch</p>
+
+            <nav class="menu" aria-label="Pie de página">
+                <a href="./index.html">Inicio</a>
+                <a href="./pages/descubrir.html">Descubrir</a>
+                <a href="./pages/listas.html">Listas</a>
+                <a href="#">Ayuda</a>
+                <a href="#">Contacto</a>
+            </nav>
+
+            <div class="redes">
+                <a href="#">Instagram</a>
+                <a href="#">X</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

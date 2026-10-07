@@ -1,0 +1,244 @@
+:root {
+    --fondo: #FFEBEB;
+    --superficie: #FFEBEB;
+    --borde: #A41119;
+    --texto: #A41119;
+    --texto-suave: #A41119;
+    --acento: #A41119;
+    --acento-hover: #7d0c12;
+    --foco: #ffc857;
+    --radio: 12px;
+    --ancho: 1200px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: "Inter Tight", sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.5;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.visually-hidden {
+    position: absolute; width: 1px; height: 1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* Header */
+.header { border-bottom: 1px solid var(--borde); }
+.headerContenido {
+    width: min(100% - 2rem, var(--ancho));
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding-block: 1rem;
+}
+
+.logo { font-size: 1.6rem; font-weight: 800; color: var(--acento); }
+.menu { display: flex; gap: 1.5rem; }
+.menu a.activo { border-bottom: 2px solid var(--acento); }
+
+.buscador input {
+    font: inherit; 
+    color: var(--texto);
+    background: var(--superficie); 
+    border: 1px solid var(--borde);
+    border-radius: 999px; 
+    padding: .55rem 1.1rem; 
+    width: 16rem; 
+    max-width: 100%;
+}
+
+
+/* Inicio */
+/* ===== Estructura de las secciones ===== */
+main > section {
+    width: min(100% - 2rem, var(--ancho));
+    margin-inline: auto;
+    padding-block: 3rem;
+}
+
+h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; line-height: 1.15; }
+
+/* Botón */
+.boton {
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    background: var(--acento);
+    color: var(--fondo);
+    border: 0;
+    border-radius: 12px;
+    padding: .8rem 1.5rem;
+    transition: background .2s;
+}
+.boton:hover { background: #7d0c12; }
+
+/*  Hero  */
+.inicio {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: 3rem;
+    align-items: center;
+}
+
+.inicioTexto { display: grid; gap: 1.25rem; justify-items: start; }
+.inicioTexto h2 { font-size: clamp(2.2rem, 5vw, 3.8rem); letter-spacing: -0.03em; }
+.inicioTexto p { font-size: 1.15rem; max-width: 34ch; }
+
+.inicioImagen {
+    aspect-ratio: 16 / 10;
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--fondo), var(--borde));
+}
+
+.inicioImagen img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* ===== Filtros ===== */
+.buscadorDeRecomendaciones { text-align: center; }
+
+.filtros {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    text-align: left;
+}
+
+.campo { display: grid; gap: .4rem; }
+
+.campo label { font-size: .9rem; font-weight: 600; }
+
+.campo select {
+    font: inherit;
+    color: var(--texto);
+    background: var(--fondo);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: .75rem 1rem;
+    width: 100%;
+}
+
+.filtrosBoton {
+    grid-column: 1 / -1;
+    justify-self: center;
+    margin-top: .5rem;
+}
+
+/* ===== Título con link ===== */
+.seccionTitulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.seccionTitulo a { font-weight: 600; }
+.seccionTitulo a:hover { text-decoration: underline; }
+
+/* ===== Grilla de películas ===== */
+.grillaPeliculas {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+}
+
+/* ===== Tarjeta ===== */
+.pelicula {
+    background: var(--fondo);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.pelicula img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    background: var(--borde);
+}
+
+.infoPeliculas { padding: .9rem 1rem 1.1rem; }
+.infoPeliculas h3 { font-size: 1.1rem; }
+.infoPeliculas p { font-size: .9rem; }
+
+/* ===== Grilla de géneros ===== */
+.grillaGeneros {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+/* ===== Tarjeta de género ===== */
+.genero {
+    display: grid;
+    gap: .6rem;
+    text-align: center;
+}
+
+.genero img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--fondo), var(--borde));
+    transition: transform .2s;
+}
+
+.genero:hover img { transform: scale(1.03); }
+
+.genero h3 { font-size: 1rem; font-weight: 600; }
+
+/* ===== Footer ===== */
+.footer {
+    border-top: 1px solid var(--borde);
+    margin-top: 2rem;
+}
+
+.footerContenido {
+    width: min(100% - 2rem, var(--ancho));
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding-block: 1.5rem;
+}
+
+.redes { display: flex; gap: 1rem; }
+.redes a:hover { text-decoration: underline; }
+
+/* ===== Responsive ===== */
+@media (max-width: 960px) {
+    .grillaPeliculas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grillaGeneros { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .filtros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 700px) {
+    .inicio { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+    .headerContenido, .footerContenido { flex-direction: column; align-items: flex-start; }
+    .menu { flex-wrap: wrap; }
+    .filtros { grid-template-columns: minmax(0, 1fr); }
+    .grillaGeneros { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+
+
+
+
+
+
+
+
